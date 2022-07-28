@@ -39,6 +39,7 @@ gem "rack-cors"
 
 # User Authentication with devise
 gem "devise", "~> 4.8"
+gem 'devise-jwt'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
