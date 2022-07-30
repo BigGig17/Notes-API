@@ -12,7 +12,7 @@ module NotesApi
     config.load_defaults 7.0
 
     # This also configures session_options for use below
-    config.session_store :cookie_store, key: '_notes_session'
+    config.session_store :cookie_store, key: '_notes_session', expire_after: 14.days
 
     # Required for all session management
     config.middleware.use ActionDispatch::Cookies
