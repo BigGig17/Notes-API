@@ -16,7 +16,11 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'd6c1820a99abd519b4cd284c5c062cdfd127444bcc60d4d2b95962e8ecb56876aeed8d3ea1fb51d1712d74cc9527fe4ee1e53cdbfa30fe3e05f3fd5043bccd92'
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
+    if ENV['RAILS_ENV'] == 'production'
+      jwt.secret = ENV['SECRET_KEY_BASE']
+    else
+      jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
+    end
 
     # jwt.dispatch_requests = [
     #   ['POST', %r{^/sign_in$}]
