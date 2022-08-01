@@ -86,8 +86,6 @@ GEM
       devise (~> 4.0)
       warden-jwt_auth (~> 0.6)
     digest (3.1.0)
-    doorkeeper (5.4.0)
-      railties (>= 5)
     dry-auto_inject (0.9.0)
       dry-container (>= 0.3.4)
     dry-configurable (0.15.0)
@@ -132,6 +130,8 @@ GEM
       timeout
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.1)
@@ -200,6 +200,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -207,7 +208,6 @@ DEPENDENCIES
   debug
   devise (~> 4.8)
   devise-jwt
-  doorkeeper (~> 5.4.0)
   jwt
   pg (~> 1.1)
   pry-rails
